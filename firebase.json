@@ -1,5 +1,5 @@
 {
-  "firebase": "sequibase-dev",
+  "firebase": "sequibase",
   "public": "app",
   "rules": "config/security-rules.js"
 }

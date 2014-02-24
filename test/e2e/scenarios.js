@@ -1,24 +1,20 @@
 'use strict';
 
-describe('Ent to end tests', function() {
+describe('End to end tests', function() {
 
 	beforeEach(function() {
 		browser().navigateTo('../../app/index.html');
 	});
 
-	describe('hello world', function() {
+	describe('Home page', function() {
 
 		beforeEach(function() {
 			browser().navigateTo('#/');
 		});
 
-		it('Just say hello', function() {
-			expect(element('h1:first').text()).toEqual('Hello !');
-		});
-
-		it('Say hello to someone', function() {
-			input('yourName').enter('Luke');
-			expect(element('h1:first').text()).toEqual('Hello Luke!');
+		it('Display changelog list', function() {
+			expect(element('[ng-view] .list :button').count()).toEqual(3);
+			expect(element('[ng-view] .list :button:first').text()).toEqual('first-changelog.xml');
 		});
 
 	});

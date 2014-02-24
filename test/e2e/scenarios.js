@@ -17,6 +17,11 @@ describe('End to end tests', function() {
 			expect(element('[ng-view] .list :button:first').text()).toEqual('first-changelog.xml');
 		});
 
+		it('Navigate to first changelog', function() {
+			element('[ng-view] .list :button:first').click();
+			expect(browser().location().url()).toBe("/generate/first-changelog.xml");
+		});
+
 	});
 
 });

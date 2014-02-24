@@ -1,14 +1,13 @@
 <!doctype html>
-<html ng-app>
+<html ng-app="sequibase">
 <head>
 	<title>Sequibase</title>
 	<script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.2.13/angular.min.js"></script>
+	<script src="js/app.js"></script>
 </head>
-<body ng-view>
+<body ng-view ng-controller="DummyController">
 	<div class="list">
-		<button>first-changelog.xml</button>
-		<button />
-		<button />
+		<button ng-repeat="changelog in changelogs" ng-click="redirect(changelog)">{{changelog}}</button>
 	</div>
 </body>
 </html>

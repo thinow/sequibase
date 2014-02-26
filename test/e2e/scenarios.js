@@ -22,6 +22,11 @@ describe('End to end tests', function() {
 			expect(browser().location().url()).toBe("/generate/first-changelog.xml");
 		});
 
+		it('Generate new id', function() {
+			element('[ng-view] .list :button:first').click();
+			expect(element('[ng-view] div[ng-model="id"]').text()).toMatch(/\w*-\d*/);
+		});
+
 	});
 
 });
